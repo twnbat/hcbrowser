@@ -3,10 +3,22 @@
     --size: 5.4rem;
 }
 
-body {
+.supertorso {
     -webkit-transform: scale(0.67);
     -moz-transform: scale(var(--pageScale));
     transform: scale(var(--pageScale));
+}
+
+.invisible {
+    background-color: rgba(0,0,0,0);
+    color: rgba(0, 0, 0,0 );
+    border: rgba(0, 0, 0, 0);
+}
+
+body {
+    /* -webkit-transform: scale(0.67);
+    -moz-transform: scale(var(--pageScale));
+    transform: scale(var(--pageScale)); */
     background-image: url(./assets/tsiisky.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -16,13 +28,13 @@ body {
 
 /* stolen from chatgpt */
 .glass {
-  background: rgba(255, 255, 255, 0.2);  /* semi-transparent white */
-  backdrop-filter: blur(10px);           /* blurry background behind div */
-  -webkit-backdrop-filter: blur(10px);   /* Safari support */
-  border-radius: 15px;                    /* rounded corners */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);  /* optional soft shadow */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -35,7 +47,7 @@ div {
     color: rgb(0, 0, 0);
     margin: 1em;
     padding: 1em;
-    border: 0.25em solid black;
+    border: 0.24rem solid black;
     border-radius: 2rem;
     text-align: center;
 }
@@ -47,6 +59,59 @@ div {
     grid-auto-flow: row;
 }
 
+.difficultycard {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoicon {
+    max-width: 2em;
+    max-height: 2em;
+    margin: 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+#copynotif {
+    position: fixed;
+    background-color: rgb(180, 180, 180);
+    left: 600px;
+    right: 600px;
+    bottom: 300px;
+    top: 600px;
+    z-index: 99999;
+}
+
+.levelinfo {
+    display: grid;
+    grid-auto-flow: row;
+}
+
+
+.item {
+    min-width:  0;
+}
+
+.lvlpanel {
+    grid-auto-flow: column;
+}
+
+.lvlpanel > div {
+    margin: 3rem;
+    padding: 5rem;
+    min-width: 0;
+}
+
+.content > div {
+    min-width: 0;
+}
+
+.playbutton {
+    border: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+}
 
 .buttonholder {
     display: flex;
@@ -56,6 +121,14 @@ div {
     background-color: rgba(0, 0, 0, 0);
 }
 
+.playbuttonimage:hover {
+    transform: scale(1.07);
+}
+
+.playbutton:active {
+    transform: scale(1.13);
+}
+
 .button:hover {
     background-color: aquamarine;
     transform: scale(1.05);
@@ -63,6 +136,7 @@ div {
 
 .button:active {
     background-color: lightgreen;
+    transform: scale(1.2);
 }
 
 .button {
