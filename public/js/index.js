@@ -3,12 +3,12 @@ import * as Utils from './util/Utils.js'
 /** @type {HTMLCollectionOf<Element>} */
 const numButtons = document.getElementsByClassName("numbutton")
 const challengeNumberDisplay = document.getElementById("numdisplay")
-const contentDisplay = document.getElementById("content")
 const searchButton = document.getElementById("go")
 const { firstAndLastChallengeNumbers } = await ChallengeHandler.getFirstAndLastChallenges()
 const difficultyFace = document.getElementById("difficultyface")
 const idButton = document.getElementById("idbutton")
 const copynotif = document.getElementById("copynotif")
+const playButton = document.getElementById("playbutton")
 const domObjectIdToLevelProperty = {
   stars: "stars",
   requestedstars: "requestedstars",
@@ -22,7 +22,14 @@ const domObjectIdToLevelProperty = {
 
 
 let challengeNumber = 0
+let currentID = null;
 
+playButton.addEventListener("click", () => {
+    console.log("click")
+    if (!isNaN(currentID) && currentID != null) {
+        window.open("https://gdbrowser.com/" + currentID)
+    }
+})
 function setChallengeNumber(num) {
     challengeNumber = num
     challengeNumberDisplay.textContent = `Selected Challenge: had0j Challenge ${challengeNumber}`
@@ -75,6 +82,7 @@ searchButton.addEventListener("click", async () => {
         }
         element.textContent = level.challenge.essential[field]
     }
+    currentID = level.challenge.essential.id
     difficultyFace.src = "../assets/difficultyfaces/" + Utils.difficultyToFace[level.challenge.essential.difficulty] + ".png"
 })
 

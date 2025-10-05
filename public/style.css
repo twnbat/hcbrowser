@@ -89,6 +89,10 @@ div {
     grid-auto-flow: row;
 }
 
+.levelinfo > div {
+    max-width: 18rem;
+}
+
 
 .item {
     min-width:  0;
