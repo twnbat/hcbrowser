@@ -12,6 +12,7 @@
   "type": "module",
   "dependencies": {
     "express":"^5.1.0",
-    "gd.js": "^0.2.13"
+    "gd.js": "^0.2.13",
+    "flatted": "^3.3.3"
   }
 }
