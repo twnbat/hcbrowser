@@ -1,6 +1,6 @@
 import ChallengeService from "../services/ChallengeService.js";
 import Challenge from "../models/Challenge.js";
-import { isValidChallengeNumber } from "../validators/challengeNumberValidator.js";
+import { isValidChallengeNumber } from "../validators/ChallengeNumberValidator.js";
 import LevelsService from "../services/LevelsService.js";
 
 export default class ChallengeController {
