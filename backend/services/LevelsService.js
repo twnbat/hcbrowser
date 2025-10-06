@@ -8,6 +8,8 @@ export default class LevelsService {
             const level = await LevelsService.gdApi.levels.get(levelID)
             if (level) { // Probably redundant
                 return level;
+            } else {
+                console.trace(`could not find level of id ${levelID}`)
             }
         } catch (error) {
             console.error(error)
