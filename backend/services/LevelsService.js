@@ -1,5 +1,7 @@
 import GD from 'gd.js';
 import { stringify } from 'flatted';
+import fetch from 'node-fetch';
+globalThis.fetch = fetch;
 export default class LevelsService {
     static gdApi = new GD()
 
