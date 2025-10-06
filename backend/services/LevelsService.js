@@ -6,6 +6,7 @@ export default class LevelsService {
     async getGDLevel(levelID) {
         try {
             const level = await LevelsService.gdApi.levels.get(levelID)
+            console.log(level)
             if (level) { // Probably redundant
                 return level;
             } else {
